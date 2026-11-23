@@ -1,0 +1,47 @@
+version: "3"
+
+tasks:
+  sync:
+    desc: Install the app and dev tools into .venv
+    cmds:
+      - uv sync
+
+  run:
+    desc: Run Architect in the current directory
+    cmds:
+      - uv run architect {{.CLI_ARGS}}
+
+  fmt:
+    desc: Format and auto-fix lint issues
+    cmds:
+      - uv run ruff format .
+      - uv run ruff check --fix .
+
+  lint:
+    desc: Lint, format check, and type check
+    cmds:
+      - uv run ruff check .
+      - uv run ruff format --check .
+      - uv run pyright
+
+  test:
+    desc: Run the test suite
+    cmds:
+      - uv run pytest -q {{.CLI_ARGS}}
+
+  check:
+    desc: Everything CI runs
+    cmds:
+      - task: lint
+      - task: test
+
+  build:
+    desc: Build sdist and wheel into dist/
+    cmds:
+      - rm -rf dist
+      - uv build
+
+  install:
+    desc: Install the `architect` command globally with uv tool
+    cmds:
+      - uv tool install --force .
