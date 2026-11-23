@@ -1,0 +1,161 @@
+Screen {
+    background: $background;
+    color: $foreground;
+}
+
+Header, Footer {
+    background: $background;
+    color: $foreground;
+}
+
+#layout {
+    height: 1fr;
+    width: 100%;
+}
+
+#sidebar {
+    width: 32;
+    height: 1fr;
+    background: $background;
+    padding: 1 1;
+    border-right: vkey $primary 40%;
+}
+
+#sidebar DirectoryTree {
+    background: transparent;
+    color: $foreground;
+}
+
+#main {
+    width: 1fr;
+    height: 1fr;
+    background: $background;
+}
+
+#chat {
+    background: $background;
+    color: $foreground;
+    padding: 1 2 0 2;
+    height: 1fr;
+}
+
+.message {
+    margin-bottom: 1;
+}
+
+.user {
+    color: $foreground 80%;
+}
+
+.thinking {
+    color: $foreground 45%;
+    text-style: dim italic;
+    padding: 0 2;
+    margin-bottom: 1;
+}
+
+.spinner {
+    color: $foreground;
+    padding: 0 2;
+}
+
+.tool-line {
+    color: $foreground 60%;
+    padding: 0 2;
+}
+
+.tool-line.error {
+    color: $error;
+}
+
+.note {
+    color: $warning;
+    padding: 0 2;
+    margin-bottom: 1;
+}
+
+.error-message {
+    color: $error;
+}
+
+Markdown, MarkdownBlock, MarkdownFence, MarkdownCode {
+    background: $background;
+    color: $foreground;
+}
+
+MarkdownH1, MarkdownH2, MarkdownH3, MarkdownH4, MarkdownH5, MarkdownH6 {
+    color: $foreground;
+}
+
+MarkdownLink {
+    color: $foreground;
+    text-style: underline;
+}
+
+#completion-hint {
+    height: 1;
+    background: $background;
+    color: $foreground 70%;
+    padding: 0 2;
+}
+
+#input-row {
+    height: auto;
+    max-height: 12;
+    background: $background;
+    padding: 0 2 1 2;
+}
+
+#msg-input {
+    width: 1fr;
+    height: auto;
+    min-height: 3;
+    max-height: 10;
+    background: $background;
+    color: $foreground;
+    border: solid $primary;
+}
+
+QuestionModal {
+    align: center middle;
+    background: $background 80%;
+}
+
+#question-dialog {
+    width: 72;
+    max-width: 100%;
+    height: auto;
+    max-height: 90%;
+    background: $background;
+    border: thick $primary;
+    padding: 1 2;
+}
+
+#question-title {
+    color: $primary;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+#question-body, #question-options {
+    height: auto;
+    margin-bottom: 1;
+}
+
+.question-option {
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#question-input {
+    margin-bottom: 1;
+}
+
+#question-actions {
+    height: 3;
+    align: right middle;
+}
+
+#question-actions Button {
+    margin-left: 1;
+}
